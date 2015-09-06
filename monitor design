@@ -1,0 +1,31 @@
+***accumulator***
+service:
+    report(ID, count)
+    
+ID:
+    servie_name.report_name
+    
+report module: ID, count
+    count accumulate by ID
+    push redis:
+        Hash: ID, total count
+    midnight:
+        backup hash table of today
+        create new hash tale
+        delete oldest backup
+        
+redis:
+    Hash: ID, count
+    
+zabbix: key, command
+    command:
+        execute:
+            monitoring python script(para)
+        
+python monitoring script: para
+    get from redis by para(key/ID)
+    print result:
+        value reported to zabbix
+        
+
+    
