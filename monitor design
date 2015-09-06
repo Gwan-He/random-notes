@@ -27,5 +27,8 @@ python monitoring script: para
     print result:
         value reported to zabbix
         
-
+python monitoring script: para
+    get from redis by para(key/ID)
+    pipe:
+        zabbix_sender send kv to zabbix
     
